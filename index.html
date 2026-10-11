@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickNotes API Client</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">API CLIENT DEMO</p>
+      <h1>QuickNotes</h1>
+      <p>Capture ideas before they disappear.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" aria-labelledby="server-notes-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="server-notes-heading">Server notes</h2>
+          <p>Load sample notes from JSONPlaceholder.</p>
+        </div>
+        <button id="load-btn" type="button">Load notes</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready. Load notes or create a note to begin.</p>
+      <ul id="notes-list" class="notes-list" aria-label="Notes"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="create-heading">
+      <h2 id="create-heading">Create a note</h2>
+      <p>Try sending a new note to the practice API.</p>
+      <form id="note-form" novalidate>
+        <div class="field">
+          <label for="title-input">Title <span aria-hidden="true">*</span></label>
+          <input id="title-input" name="title" type="text" maxlength="100" required aria-describedby="title-help">
+          <small id="title-help">Required, maximum 100 characters.</small>
+        </div>
+        <div class="field">
+          <label for="body-input">Body (optional)</label>
+          <textarea id="body-input" name="body" rows="4" placeholder="Write your note..."></textarea>
+        </div>
+        <button id="submit-btn" type="submit">Create note</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">QuickNotes · API practice project</div></footer>
+</body>
+</html>
